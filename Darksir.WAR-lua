@@ -1,0 +1,354 @@
+function get_sets()
+	include('organizer-lib')
+	Idle_Index = 1
+	Buff_Index = 1
+	Acc_Index = 1
+	Armor_Index = 1
+	Get_Index = 1
+	KB_Index = 1
+	TH_Index = 1
+	Mode_Index = 1
+	
+	
+	TH = {"Off","On"}
+	KB = {"Off","On"}
+	
+	Mode = {"Solo","Party"}
+	
+
+	
+	sets.TH = {}
+	--这里修改的是GK的装备
+	sets.TH['On'] = {main="Zanmato +1",sub="Utu Grip",head="Fazheluo Helm",neck="Combatant's Torque"}
+	sets.TH['Off'] = {}
+	
+	sets.KB = {}
+	sets.KB['On'] = {}
+	sets.KB['Off'] = {}
+	
+	sets.precast = {}
+	--这里是用技能时候强化的装备
+	
+	sets.precast['Mighty Strikes'] = {hands={ name="Agoge Mufflers", augments={'Enhances "Mighty Strikes" effect',}},}
+	sets.precast['Provoke'] = {}
+	sets.precast['Berserk'] = {body="Pumm. Lorica +3",feet={ name="Agoge Calligae +3", augments={'Enhances "Tomahawk" effect',}},back="Cichol's Mantle",}
+	sets.precast['Defender'] = {}
+	sets.precast['Warcry'] = {head={ name="Agoge Mask +3", augments={'Enhances "Savagery" effect',}},}
+	sets.precast['Aggressor'] = {body={ name="Agoge Lorica +3", augments={'Enhances "Aggressive Aim" effect',}},}
+	sets.precast['Retaliation'] = {}
+	sets.precast['Warrior\'s Charge'] = {legs={ name="Agoge Cuisses +3", augments={'Enhances "Warrior\'s Charge" effect',}},}
+	sets.precast['Restraint'] = {}
+	sets.precast['Blood Rage'] = {}
+	sets.precast['Tomahawk'] = {ammo="Thr. Tomahawk",feet={ name="Agoge Calligae +3", augments={'Enhances "Tomahawk" effect',}},}
+	
+	
+	--这个是用Curing Waltz的装备
+	sets.precast.Waltz = {}
+	
+	--这里是WS装备
+	sets.WS = {}
+	sets.WS['Ukko\'s Fury'] ={
+    ammo="Knobkierrie",
+    head={ name="Agoge Mask +3", augments={'Enhances "Savagery" effect',}},
+    body="Pumm. Lorica +3",
+    hands={ name="Odyssean Gauntlets", augments={'Attack+20','Weapon skill damage +4%','VIT+13',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet="Sulev. Leggings +2",
+    neck={ name="War. Beads +1", augments={'Path: A',}},
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+    right_ear="Thrud Earring",
+    left_ring="Niqmaddu Ring",
+    right_ring="Regal Ring",
+    back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
+}
+	
+	sets.WS['King\'s Justice']={
+    ammo="Knobkierrie",
+    head={ name="Agoge Mask +3", augments={'Enhances "Savagery" effect',}},
+    body="Pumm. Lorica +3",
+    hands={ name="Odyssean Gauntlets", augments={'Attack+20','Weapon skill damage +4%','VIT+13',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet="Sulev. Leggings +2",
+    neck={ name="War. Beads +1", augments={'Path: A',}},
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+    right_ear="Thrud Earring",
+    left_ring="Niqmaddu Ring",
+    right_ring="Regal Ring",
+    back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
+}
+	
+	sets.WS['Upheaval']={
+    ammo="Knobkierrie",
+    head={ name="Agoge Mask +3", augments={'Enhances "Savagery" effect',}},
+    body="Pumm. Lorica +3",
+    hands={ name="Odyssean Gauntlets", augments={'Attack+20','Weapon skill damage +4%','VIT+13',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet="Sulev. Leggings +2",
+    neck={ name="War. Beads +1", augments={'Path: A',}},
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+    right_ear="Thrud Earring",
+    left_ring="Niqmaddu Ring",
+    right_ring="Regal Ring",
+    back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
+}
+		
+	sets.WS['Resolution'] ={
+    ammo="Knobkierrie",
+    head={ name="Agoge Mask +3", augments={'Enhances "Savagery" effect',}},
+    body="Pumm. Lorica +3",
+    hands={ name="Odyssean Gauntlets", augments={'Attack+20','Weapon skill damage +4%','VIT+13',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet="Sulev. Leggings +2",
+    neck={ name="War. Beads +1", augments={'Path: A',}},
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+    right_ear="Thrud Earring",
+    left_ring="Niqmaddu Ring",
+    right_ring="Regal Ring",
+    back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
+}
+	
+	sets.WS['Savage Blade']={
+    ammo="Knobkierrie",
+    head={ name="Agoge Mask +3", augments={'Enhances "Savagery" effect',}},
+    body="Pumm. Lorica +3",
+    hands={ name="Agoge Mufflers +3", augments={'Enhances "Mighty Strikes" effect',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet="Sulev. Leggings +2",
+    neck={ name="War. Beads +1", augments={'Path: A',}},
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+    right_ear="Thrud Earring",
+    left_ring="Niqmaddu Ring",
+    right_ring="Regal Ring",
+    back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
+}
+
+
+	--Mighty strikes下的装备，暴击伤害
+	sets.WS['MS'] ={}
+	
+	--这里是没有指明的WS装备
+	sets.precast.WS = sets.WS['Resolution']
+	
+	Acc = {"LowAcc","MidAcc","HighAcc"}
+	Buffs = {"LowBuff","HighBuff"}
+	Armor = {"Normal","PDT","MDT","Eva"}
+
+	sets.TP = {}
+	sets.TP['LowAcc'] = {}
+	sets.TP['MidAcc'] = {}
+	sets.TP['HighAcc'] = {}
+	
+	--这里是Solo时候的装备，低命中、中等命中、高命中
+	sets.TP['LowAcc'] ={
+    ammo="Coiste Bodhar",
+    head="Hjarrandi Helm",
+	body="Hjarrandi Breast.",
+    hands={ name="Agoge Mufflers +3", augments={'Enhances "Mighty Strikes" effect',}},
+    legs="Pumm. Cuisses +3",
+    feet="Pumm. Calligae +3",
+    neck={ name="War. Beads +1", augments={'Path: A',}},
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear={ name="Schere Earring", augments={'Path: A',}},
+    right_ear="Telos Earring",
+    left_ring="Niqmaddu Ring",
+    right_ring="Petrov Ring",
+    back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+}
+	
+	sets.TP['MidAcc']={}
+		
+	sets.TP['HighAcc'] ={}
+
+	
+	sets.WS.SA = {}
+	sets.WS.TA = {}
+	sets.WS.SATA = {}
+	
+	
+	
+	--这里是特殊装备，PDT是物理防御，MDT是魔法防御，Eva是回避
+	sets.Status = {}
+	sets.Status['PDT'] ={
+    main="Nng",
+    sub="Brrield +1",
+    ammo="Coiste Bodhar",
+    head="Hjarrandi Helm",
+	body="Hjarrandi Breast.",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
+    feet="Sakpata's Leggings",
+    neck={ name="War. Beads +1", augments={'Path: A',}},
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear={ name="Schere Earring", augments={'Path: A',}},
+    right_ear="Telos Earring",
+    left_ring="Niqmaddu Ring",
+    right_ring="Petrov Ring",
+    back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+}
+	sets.Status['MDT'] = {}
+		
+	sets.Status['Eva'] = {}
+	sets.Status['Normal'] = {}
+	
+	sets_now = {}
+	sets_magic = {}
+	set_ws = {}
+	--这个是平时不攻击时候穿的装备，跑鞋、regen之类的
+	sets.Idle ={    sub="Utu Grip",
+    ammo="Staunch Tathlum +1",
+	range="Aureole",
+    head="Hjarrandi Helm",
+    body="Hjarrandi Breast.",
+    hands="Sulev. Gauntlets +2",
+    legs="Pumm. Cuisses +3",
+    feet="Hermes' Sandals",
+    neck="War. Beads +2",
+    waist="Ioskeha Belt +1",
+    left_ear="Odnowa Earring +1",
+    right_ear="Telos Earring",
+    left_ring="Shneddick Ring",
+    right_ring="Warp Ring",
+    back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}},
+}	
+end
+
+function precast(spell)
+	if sets.precast[spell.english] then
+		equip(sets.precast[spell.english])
+	elseif spell.type=="WeaponSkill" then
+		if sets.WS[spell.english] then equip(sets.WS[spell.english])
+		else
+		equip(sets.precast.WS)
+		end
+		if buffactive['sneak attack'] and buffactive['trick attack'] and sets.WS.SATA[spell.english] then equip(sets.WS.SATA[spell.english])
+		elseif buffactive['sneak attack'] and sets.WS.SA[spell.english] then equip(sets.WS.SA[spell.english])
+		elseif buffactive['trick attack'] and sets.WS.TA[spell.english] then equip(sets.WS.TA[spell.english]) end
+		if buffactive['Mighty Strikes'] then 
+			equip(sets.WS.MS) 
+			send_command('@input /echo Mighty Strikes set')
+		end
+	elseif string.find(spell.english,'Waltz') then
+		equip(sets.precast.Waltz)
+	elseif spell.type:lower() == 'utsusemi' then
+		sets_magic = set_combine(sets.precast.FC,sets.precast.ninjutsu)
+		equip(sets_magic)
+		send_command('@input /echo NIN')
+	end
+	
+	if spell.type=="WeaponSkill" then
+		if player.tp<2500 and not (world.time >= (17*60) or world.time <= (7*60))then
+			send_command('@input /echo Moonshade Earring')
+			equip({ear1="Moonshade Earring",})
+		elseif player.tp<2500 and (world.time >= (17*60) or world.time <= (7*60)) then
+			send_command('@input /echo 1 Ishvara Earring')
+			equip({ear2="Thrud Earring"})
+		elseif player.tp>2500 and (world.time >= (17*60) or world.time <= (7*60)) then
+			send_command('@input /echo 2 Thrud Earring')
+			equip({ear1="Ishvara Earring",ear2="Thrud Earring"})
+		elseif player.tp>2500 then
+			send_command('@input /echo Cessance Earring')
+			equip({})
+		end
+	end
+end
+
+function midcast(spell)
+	if string.find(spell.english,'Utsusemi') then
+		sets_magic=set_combine(sets.precast.ninjutsu)
+		equip(sets_magic)
+		send_command('@input /echo Nin midcast')
+	end
+end
+
+function aftercast(spell)
+	status_update()
+end
+
+function status_change(new,old)
+	status_update()
+end
+
+function buff_change(buff,gain_or_loss)
+	if buff=="Sneak Attack" then
+		soloSA = gain_or_loss
+	elseif buff=="Trick Attack" then
+		soloTA = gain_or_loss
+	end
+	if buff=="Haste" then
+		proc = gain_or_loss
+	end
+	status_update()
+end
+
+function status_update()
+	
+	if player.status=='Engaged' then
+		set_now = set_combine(sets.TP[Acc[Acc_Index]],sets.Status[Armor[Armor_Index]],sets.TH[TH[TH_Index]],sets.KB[KB[KB_Index]])
+		equip(set_now)
+	else
+		set_now = set_combine(sets.Idle,sets.Status[Armor[Armor_Index]],{},sets.KB[KB[KB_Index]])
+		equip(set_now)
+	end
+	if player.status=='Engaged' and Mode_Index == 2 and player.mp >= 150 then
+		equip()
+	end
+end
+
+--Macro设置（注意大小写）：
+	--TH：换上Treasure Hunter装备 设置：/console gs c TH
+	--Mode: 模式：Solo和队伍      设置：/console gs c Mode
+	--acc: 命中切换					  设置：/console gs c acc
+	--MDT：切换魔防装备           设置：/console gs c MDT
+	--PDT: 切换物理防御装备       设置：/console gs c PDT
+	--EVA: 切换回避装备           设置：/console gs c EVA
+	--TP: 切换正常装备            设置：/console gs c TP
+	
+function self_command(command)
+	if command == 'TH' then
+		if TH_Index == 1 then 
+		send_command('@input /echo ----- TH On -----')
+		TH_Index = 2
+		status_update()
+		else
+		send_command('@input /echo ----- TH Off -----')
+		TH_Index = 1
+		status_update()
+		end
+	elseif command == 'Mode' then
+		Mode_Index = Mode_Index +1
+		if Mode_Index > #Mode then Mode_Index = 1 end
+		send_command('@input /echo ----- Current Mode: '..Mode[Mode_Index]..' -----')
+		status_update()
+	elseif command == 'acc' then
+		Acc_Index = Acc_Index +1
+		if Acc_Index > #Acc then Acc_Index = 1 end
+		send_command('@input /echo ----- Current Accuracy: '..Acc[Acc_Index]..' -----')
+		status_update()
+	elseif command == 'Dagger' then
+		Dagger_Index = Dagger_Index +1
+		if Dagger_Index > #Dagger then Dagger_Index = 1 end
+		send_command('@input /echo ----- Current Dagger: '..Dagger[Dagger_Index]..' -----')
+		status_update()
+	elseif command == 'MDT' then
+		Armor_Index = 3
+		send_command('@input /echo ----- MDT set -----')
+		status_update()
+	elseif command == 'PDT' then
+		send_command('@input /echo ----- PDT set -----')
+		Armor_Index = 2
+		status_update()
+	elseif command == 'TP' then
+	    send_command('@input /echo ----- TP set -----')
+		Armor_Index = 1
+		status_update()
+	elseif command == 'Eva' then
+		send_command('@input /echo ----- Eva set -----')
+		Armor_Index = 4
+		status_update()
+	end
+end
